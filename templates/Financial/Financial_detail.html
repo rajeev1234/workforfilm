@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="Financials-entry">
+
+        <h2>Financial_Id:{{ object.Financial_Id }}</h2>
+        <p>Financial_Body_Type: {{ object.Financial_Body_Type }}</p>
+        <p>Financial_Description:{{ object.Financial_Description }}</p>
+        <p>Financial_Ethnicity: {{ object.Financial_Ethnicity }}</p>
+        <p>Financial_Eye_Color:{{ object.Financial_Eye_Color }}</p>
+        <p>Financial_Favorite_Acting_Styles: {{ object.Financial_Favorite_Acting_Styles }}</p>
+        <p>Financial_Height:{{ object.Financial_Height }}</p>
+        <p>Financial_Rates: {{ object.Financial_Rates }}</p>
+        <p>Financial_SceneComfort:{{ object.Financial_SceneComfort }}</p>
+        <p>Financial_Skin_Color: {{ object.Financial_Skin_Color }}</p>
+        <p>Financial_Smoker:{{ object.Financial_Smoker }}</p>
+        <p>Financial_Weight:{{ object.Financial_Weight }}</p>
+
+    </div>
+    
+
+        <a href="{% url 'Financials_edit' Financials.pk %}">Edit</a> |
+
+        <a href="{% url 'Financials_delete' Financials.pk %}">Delete</a>
+    </p>
+
+       # facebook like button
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'Financials_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}

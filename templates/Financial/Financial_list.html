@@ -1,0 +1,60 @@
+
+<!-- creating frame for page via base.html -->
+
+{% extends 'base.html' %}
+
+<!-- create title for Financials_list.html -->
+
+{% block title %}Financialss{% endblock %}
+
+{% block content %}
+
+    <!-- create list of Financialss -->
+
+    {% for Financials in object_list %}
+
+      <!-- create card deck for displaying Financialss -->
+        <div class="card">
+
+        <div class="card-header">
+
+            <span class="font-weight-bold">{{ Financials.Financial_id }}</span>
+            <span class="text-muted">{{ Financials.Financial_Created_Date }}</span>
+
+        </div>
+
+
+        <!-- <div class="card-body">
+
+            <p>{{ Financials.Financials_Message }}</p>
+
+            <a href="{% url 'Financials_edit' Financials.pk %}">Edit</a> |
+
+            <a href="{% url 'Financials_delete' Financials.pk %}">Delete</a>
+
+        </div>
+
+        <div class="card-footer text-center text-muted">
+
+<!--             <!-- create list of comments of Financialss -->
+            <!-- {% for comment in Financials.comment_set.all %}
+
+                <p>
+
+                    <span class="font-weight-bold">{{ comment.Financials_Comment_Author }} &middot;</span>
+                    {{ comment }}
+
+                </p> --> -->
+
+           <!--  {% endfor %}  -->-->
+
+        </div>
+
+
+    </div>
+
+      <br />
+
+    {% endfor %}
+
+{% endblock content %}
